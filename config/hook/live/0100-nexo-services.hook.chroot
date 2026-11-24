@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+# Включаем нужные службы
+systemctl enable NetworkManager.service
+systemctl enable systemd-timesyncd.service
+systemctl enable zramswap.service
+
+# Отключаем фоновые обслуживающие таймеры (экономия ресурсов)
+systemctl disable apt-daily.timer apt-daily-upgrade.timer || true
+systemctl mask apt-daily.service apt-daily-upgrade.service || true
+systemctl disable e2scrub_all.timer || true
+
+# Настройка пользовательских каталогов
+mkdir -p /etc/skel/Documents /etc/skel/Downloads
