@@ -1,0 +1,33 @@
+# Базовая система
+live-boot
+live-config
+live-config-systemd
+systemd-sysv
+linux-image-amd64
+firmware-linux-free
+firmware-linux-nonfree
+firmware-misc-nonfree
+
+# Консоль и файловые утилиты
+bash
+coreutils
+nano
+less
+file
+tree
+htop
+pciutils
+usbutils
+
+# Сеть
+network-manager
+iproute2
+iputils-ping
+ca-certificates
+curl
+
+# Файловые системы
+e2fsprogs
+dosfstools
+ntfs-3g
+exfatprogs
