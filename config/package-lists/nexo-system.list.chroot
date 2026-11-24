@@ -1,0 +1,36 @@
+# Язык и клавиатура
+locales
+console-setup
+keyboard-configuration
+tzdata
+fonts-dejavu-core
+
+# Права и системная шина
+sudo
+dbus
+polkitd
+pkexec
+
+# Сеть и Wi-Fi
+wpasupplicant
+rfkill
+wireless-regdb
+isc-dhcp-client
+
+# Время
+systemd-timesyncd
+
+# Работа с дисками и флешками
+udisks2
+gvfs
+gvfs-backends
+parted
+
+# Звук
+pipewire
+pipewire-pulse
+wireplumber
+alsa-utils
+
+# Экономия памяти
+zram-tools
