@@ -1,0 +1,46 @@
+* {
+    font-family: "Noto Sans", "Font Awesome 6 Free";
+    font-size: 15px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #e2e8f0;
+}
+
+.modules-left, .modules-right {
+    background: #111a2e;
+    border: 1px solid #1e2b47;
+    border-radius: 14px;
+    padding: 8px 4px;
+}
+
+#custom-launcher {
+    color: #38bdf8;
+    font-size: 20px;
+    padding: 6px 0;
+}
+
+#workspaces button {
+    color: #94a3b8;
+    background: transparent;
+    border-radius: 10px;
+    padding: 4px 0;
+}
+#workspaces button.focused {
+    color: #ffffff;
+    background: #3b82f6;
+}
+#workspaces button:hover {
+    background: #1e2b47;
+}
+
+#clock, #network, #pulseaudio, #tray {
+    padding: 6px 0;
+    color: #e2e8f0;
+}
+#network.disconnected, #pulseaudio.muted {
+    color: #64748b;
+}
