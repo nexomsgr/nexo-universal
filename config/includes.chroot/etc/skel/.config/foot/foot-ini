@@ -1,0 +1,14 @@
+font=monospace:size=11
+pad=10x10
+
+[colors]
+background=0b1220
+foreground=e2e8f0
+regular0=111a2e
+regular1=f87171
+regular2=4ade80
+regular3=facc15
+regular4=3b82f6
+regular5=a78bfa
+regular6=38bdf8
+regular7=cbd5e1
