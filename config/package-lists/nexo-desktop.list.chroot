@@ -1,0 +1,36 @@
+# Графика и композитор
+sway
+swaybg
+swayidle
+swaylock
+xwayland
+libpam-systemd
+mesa-vulkan-drivers
+libgl1-mesa-dri
+xdg-desktop-portal-wlr
+xdg-user-dirs
+
+# Панель, меню, уведомления, терминал
+waybar
+wofi
+mako-notifier
+foot
+
+# Файлы и системные окна
+thunar
+lxpolkit
+network-manager-gnome
+pavucontrol
+brightnessctl
+
+# Скриншоты и буфер обмена
+grim
+slurp
+wl-clipboard
+
+# Тема и шрифты
+gnome-themes-extra
+adwaita-icon-theme
+fonts-noto-core
+fonts-noto-color-emoji
+fonts-font-awesome
