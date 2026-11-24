@@ -1,0 +1,55 @@
+name: Build Nexo Universal ISO
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    container:
+      image: debian:bookworm
+      options: --privileged
+
+    steps:
+      - name: Установка инструментов сборки
+        run: |
+          apt-get update
+          apt-get install -y live-build debootstrap git xorriso squashfs-tools mtools dosfstools grub-efi-amd64-bin ca-certificates
+
+      - name: Загрузка репозитория
+        uses: actions/checkout@v4
+
+      - name: Подготовка
+        run: |
+          chmod +x auto/config auto/build auto/clean
+          find config/hooks -type f -name '*.hook.*' -exec chmod +x {} +
+          lb config
+
+      - name: Сборка образа
+        run: lb build
+
+      - name: Упаковка образа
+        run: |
+          ISO=$(ls *.iso | head -n1)
+          mv "$ISO" nexo-universal.iso
+          sha256sum nexo-universal.iso > nexo-universal.iso.sha256
+          ls -lh nexo-universal.iso*
+
+      - name: Выгрузка образа
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexo-universal-iso
+          path: |
+            nexo-universal.iso
+            nexo-universal.iso.sha256
+          retention-days: 7
+
+      - name: Выгрузка журнала сборки
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
+          if-no-files-found: ignore
+          retention-days: 7
