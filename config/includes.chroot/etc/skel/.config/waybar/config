@@ -1,0 +1,37 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 56,
+    "spacing": 8,
+    "margin": "8 0 8 8",
+    "modules-left": ["custom/launcher", "sway/workspaces"],
+    "modules-right": ["tray", "pulseaudio", "network", "clock"],
+
+    "custom/launcher": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wofi --show drun"
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true
+    },
+    "clock": {
+        "format": "{:%H\n%M}",
+        "tooltip-format": "{:%d.%m.%Y}"
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip-format": "{essid} {ipaddr}",
+        "on-click": "foot nmtui"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
+    },
+    "tray": { "spacing": 8 }
+}
